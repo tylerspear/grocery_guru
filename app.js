@@ -6,10 +6,14 @@ const path = require('path')
 const exphbs = require('express-handlebars')
 const MongoStore = require('connect-mongo')
 
+
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
     extname: '.hbs'
 }))
+//render view engine
+app.set('view engine', '.hbs')
+
 dotenv.config({ path: './config/config.env'})
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))

@@ -1,5 +1,5 @@
 module.exports = {
     getHome: (req,res) => {
-        res.render('layouts/main.hbs')
+        res.render('login', {layout: 'login'})
     }
 }

@@ -1,23 +1,47 @@
 :root {
     --red: #ef233c;
+    --light-grey: #edf2f4;
+    --grey: #8d99ae;
+    --navy: #2b2d42;
 }
+
+/* BODY */
+body {
+    color: var(--navy);
+}
+
+/* LOGO */
 
 .logo {
     color: var(--red) !important;
     font-family: 'Bangers', cursive;
+}
+
+.logo--nav {
     font-size: 2.5rem !important;
 }
 
+.logo--login {
+    font-size: 4rem;
+}
+
+/* NAV */
 .nav-cart {
-    color: #000;
+    color: var(--navy);
 }
 
 .sidenav-trigger .fa-bars {
-    color: #000;
+    color: var(--navy);
 }
 
 .sidenav i.fas {
     color: var(--red);
     margin-right: 15px;
 }
+
+/* LOGIN */
+.features {
+    margin-top: 2rem;
+}
+
 
