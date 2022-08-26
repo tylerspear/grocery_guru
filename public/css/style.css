@@ -1,0 +1,23 @@
+:root {
+    --red: #ef233c;
+}
+
+.logo {
+    color: var(--red) !important;
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem !important;
+}
+
+.nav-cart {
+    color: #000;
+}
+
+.sidenav-trigger .fa-bars {
+    color: #000;
+}
+
+.sidenav i.fas {
+    color: var(--red);
+    margin-right: 15px;
+}
+
