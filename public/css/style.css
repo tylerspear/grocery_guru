@@ -30,13 +30,14 @@ body {
     color: var(--navy);
 }
 
-.sidenav-trigger .fa-bars {
+.sidenav-trigger i {
     color: var(--navy);
+    font-size: 2.5rem !important;
 }
 
-.sidenav i.fas {
-    color: var(--red);
-    margin-right: 15px;
+.sidenav i {
+    color: var(--red) !important;
+    margin-right: 15px !important;
 }
 
 /* LOGIN */
@@ -44,4 +45,8 @@ body {
     margin-top: 2rem;
 }
 
+
+.card .btn-floating {
+    background-color: var(--red);
+}
 

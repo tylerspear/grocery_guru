@@ -6,21 +6,27 @@ const path = require('path')
 const exphbs = require('express-handlebars')
 const MongoStore = require('connect-mongo')
 
-
+//HANDLEBARS SETUP
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
     extname: '.hbs'
 }))
-//render view engine
 app.set('view engine', '.hbs')
 
+//CONFIG FILE
 dotenv.config({ path: './config/config.env'})
+
+//MIDDLEWARE
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-//Routes
+//ROUTES
 const mainRoutes = require('./routes/main')
+const recipeRoutes = require('./routes/recipe')
+const dashboardRoutes = require('./routes/dashboard')
 app.use('/', mainRoutes)
+app.use('/recipes', recipeRoutes)
+app.use('/dashboard', dashboardRoutes)
 
 //ACTIVATE PORT
 app.listen(process.env.PORT || PORT, ()=> {
