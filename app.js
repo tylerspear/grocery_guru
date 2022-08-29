@@ -24,9 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 const mainRoutes = require('./routes/main')
 const recipeRoutes = require('./routes/recipe')
 const dashboardRoutes = require('./routes/dashboard')
+const cartRoutes = require('./routes/cart')
 app.use('/', mainRoutes)
 app.use('/recipes', recipeRoutes)
 app.use('/dashboard', dashboardRoutes)
+app.use('/cart', cartRoutes)
 
 //ACTIVATE PORT
 app.listen(process.env.PORT || PORT, ()=> {
