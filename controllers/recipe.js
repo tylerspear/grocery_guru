@@ -14,5 +14,13 @@ module.exports = {
         catch(err){
             console.error(err)
         }
+    },
+    showRecipe: async (req, res) => {
+        try {
+            res.render('recipes/show')
+        }
+        catch(err) {
+            console.err(err)
+        }
     }
 }
