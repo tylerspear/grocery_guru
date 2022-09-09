@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const recipeController = require('../controllers/recipe')
-
-router.get('/', recipeController.getDashboard)
+const { ensureAuth } = require('../middleware/auth')
+router.get('/', ensureAuth, recipeController.getDashboard)
 
 module.exports = router 
