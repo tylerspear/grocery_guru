@@ -17,6 +17,10 @@ body {
     font-family: 'Bangers', cursive;
 }
 
+/* BTN */
+.btn {
+    background-color: var(--red);
+}
 .logo--nav {
     font-size: 2.5rem !important;
 }

@@ -4,8 +4,12 @@
             <p class="lead">Create & share recipes, generate shopping lists</p>
     </div>
     <div class="section center">
-        <a href="/auth/google" class="btn red darken-1">
-        <i class="fab fa-google left"></i>Log In With Google</a>
+        <form action="/auth/login" method="POST">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input class="btn" type="submit" value="Log In">
+        </form>
+    <a href="/auth/signup">No Account? Sign Up</a>
     </div>
     <div class="divider"></div>
     <div class="section features">
