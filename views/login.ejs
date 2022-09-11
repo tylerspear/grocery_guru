@@ -1,15 +1,22 @@
+<%- include('partials/_head') %>
 <div class="container">
     <div class="section center">
             <h3 class="logo logo--login center">Grocery Guru</h3>
             <p class="lead">Create & share recipes, generate shopping lists</p>
     </div>
-    <div class="section center">
-        <form action="/auth/login" method="POST">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+    <div class="section row valign-wrapper">
+        <form class="col m6 center" action="/auth/login" method="POST">
+            <div class="input-field col s12">
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="input-field col s12">
+                <input type="password" name="password" placeholder="Password">
+            </div>
             <input class="btn" type="submit" value="Log In">
         </form>
-    <a href="/auth/signup">No Account? Sign Up</a>
+        <div class="col m6 center-align">
+            <span>No Account? </span><a class="btn" href="/auth/signup">Sign Up</a>
+        </div>
     </div>
     <div class="divider"></div>
     <div class="section features">
@@ -35,3 +42,4 @@
         </div>
     </div>
 </div>
+<%- include('partials/_footer') %>

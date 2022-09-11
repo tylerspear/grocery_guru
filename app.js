@@ -13,12 +13,9 @@ const connectDB = require('./config/database')
 const logger = require('morgan')
 require('./config/passport')(passport)
 
-//HANDLEBARS SETUP
-app.engine('.hbs', exphbs.engine({
-    defaultLayout: 'main',
-    extname: '.hbs'
-}))
-app.set('view engine', '.hbs')
+//EJS SETUP
+app.set('view engine', 'ejs')
+
 
 //CONFIG FILES
 dotenv.config({ path: './config/config.env'})

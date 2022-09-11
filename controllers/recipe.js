@@ -1,7 +1,11 @@
+const Recipe = require('../models/Recipe')
+
 module.exports = {
     getRecipes: async (req, res) => {
         try {
-            res.render('recipes/index')
+            const recipes = await Recipe.find()
+            console.log(recipes)
+            res.render('recipes/index', {title: 'All Recipes', recipes})
         }
         catch(err) {
             console.error(err)
@@ -9,7 +13,7 @@ module.exports = {
     },
     getDashboard: async (req, res) => {
         try {
-            res.render('recipes/dashboard')
+            res.render('recipes/dashboard', {title: 'Dashboard'})
         }
         catch(err){
             console.error(err)
@@ -17,10 +21,18 @@ module.exports = {
     },
     showRecipe: async (req, res) => {
         try {
-            res.render('recipes/show')
+            res.render('recipes/show', {title: 'Recipe'})
         }
         catch(err) {
-            console.err(err)
+            console.error(err)
+        }
+    },
+    newRecipe: (req, res) => {
+        try {
+            res.render('recipes/new', {title: 'New Recipe'})
+        }
+        catch (err){
+            console.error(err)
         }
     }
 }

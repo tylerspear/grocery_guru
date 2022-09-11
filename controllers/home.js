@@ -1,5 +1,5 @@
 module.exports = {
     getHome: (req,res) => {
-        res.render('login', {layout: 'login'})
+        res.render('login', {title: 'Login'})
     }
 }
