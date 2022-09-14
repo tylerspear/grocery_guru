@@ -59,3 +59,8 @@ body {
 .recipe-image img {
     max-width: 75%;
 }
+
+.card .chip {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}

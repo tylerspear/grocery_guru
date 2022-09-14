@@ -4,7 +4,10 @@ module.exports = {
     getRecipes: async (req, res) => {
         try {
             const recipes = await Recipe.find()
-            console.log(recipes)
+            .populate('user')
+            .sort({ createdAt: 'desc' })
+            .lean()
+            
             res.render('recipes/index', {title: 'All Recipes', recipes})
         }
         catch(err) {
@@ -13,7 +16,10 @@ module.exports = {
     },
     getDashboard: async (req, res) => {
         try {
-            res.render('recipes/dashboard', {title: 'Dashboard'})
+            const recipes = await Recipe.find({
+                user: req.user.id
+            })
+            res.render('recipes/dashboard', {title: 'Dashboard', recipes})
         }
         catch(err){
             console.error(err)
