@@ -34,5 +34,16 @@ module.exports = {
         catch (err){
             console.error(err)
         }
+    },
+    postRecipe: async (req, res) => {
+        try {
+            console.log(req.body)
+            req.body.user = req.user.id
+            await Recipe.create(req.body)
+            res.redirect('/dashboard')
+        }
+        catch (err) {
+            console.error(err)
+        }
     }
 }

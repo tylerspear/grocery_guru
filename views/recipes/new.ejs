@@ -3,8 +3,52 @@
 
 <div class="container">
     <div class="row">
-        <div class="col s12">
-            <h1>Hello</h1>
-        </div>
-    </div>
-</div>
+        <div class="col s12 m8 offset-m2">
+            <h3>Share a New Tasty Creation</h3>
+            <form action="/recipes" method="post">
+              <div class="row">
+
+                <div class="input-field col s12">
+                    <input type="text" id="title" name="title">
+                    <label for="title">Recipe Title</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input type="text" id="description" name="description">
+                  <label for="description">Recipe Description</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input type="number" id="cookTime" name="cookTime">
+                  <label for="cookTime">Cook Time (minutes)</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
+                  <label for="ingredients">Ingredient List</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <textarea id="steps" name="steps" class="materialize-textarea"></textarea>
+                  <label for="steps">Steps</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select name="status" id="status">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                    </select>
+                    <label for="status">Status</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input type="submit" value="Save" class="btn">
+                  <a href="/dashboard" class="btn orange">Cancel</a>
+                </div>
+                    
+              </div>
+            </form>
+        </div><!-- col s12-->
+    </div><!-- row-->
+</div><!-- container -->
+<%- include('../partials/_footer') %>

@@ -6,6 +6,7 @@ const { ensureAuth } = require('../middleware/auth')
 router.get('/', ensureAuth, recipeController.getRecipes)
 router.get('/new', ensureAuth, recipeController.newRecipe)
 router.get('/:id', ensureAuth, recipeController.showRecipe)
+router.post('/', ensureAuth, recipeController.postRecipe)
 
 
 module.exports = router 

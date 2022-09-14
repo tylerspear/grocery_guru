@@ -6,14 +6,23 @@ const RecipeSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    desc: {
+    description: {
         type: String,
         required: true
     },
-    // ratings: {
-    //     type: Number,
-    //     required: true
-    // },
+    cookTime: {
+        type: Number
+    },
+    ingredients: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    steps: {
+        type: String,
+        required: true,
+        trim: true
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -25,8 +34,8 @@ const RecipeSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        ref: 'User',
-        required: true
+        default: 'public',
+        enum: ['public', 'private']
     }
 })
 
