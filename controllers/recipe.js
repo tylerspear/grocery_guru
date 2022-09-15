@@ -3,7 +3,7 @@ const Recipe = require('../models/Recipe')
 module.exports = {
     getRecipes: async (req, res) => {
         try {
-            const recipes = await Recipe.find()
+            const recipes = await Recipe.find({status: 'public'})
             .populate('user')
             .sort({ createdAt: 'desc' })
             .lean()
@@ -27,7 +27,10 @@ module.exports = {
     },
     showRecipe: async (req, res) => {
         try {
-            res.render('recipes/show', {title: 'Recipe'})
+            const recipe = await Recipe.findById(req.params.id)
+                .populate('user')
+                .lean()
+            res.render('recipes/show', {title: 'Recipe', recipe})
         }
         catch(err) {
             console.error(err)

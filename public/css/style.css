@@ -64,3 +64,18 @@ body {
     margin-top: 1rem;
     margin-bottom: 0;
 }
+
+.card .card-action a {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+.card .card-line {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card .card-line i {
+    margin-right: 0.25rem;
+}
