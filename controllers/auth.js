@@ -39,16 +39,6 @@ const User = require('../models/User')
   }
   
   exports.logout = (req, res, next) => {
-    // req.logout(() => {
-    //   console.log('test1')
-    //   console.log('User has logged out.')
-    // })
-    // req.session.destroy((err) => {
-    //   console.log('test2')
-    //   if (err) console.log('Error : Failed to destroy the session during logout.', err)
-    //   req.user = null
-    //   res.redirect('/')
-    // })
     req.logout(function(err) {
       if(err){ return next(err) }
       res.redirect('/')

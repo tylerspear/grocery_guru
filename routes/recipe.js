@@ -7,6 +7,6 @@ router.get('/', ensureAuth, recipeController.getRecipes)
 router.get('/new', ensureAuth, recipeController.newRecipe)
 router.get('/:id', ensureAuth, recipeController.showRecipe)
 router.post('/', ensureAuth, recipeController.postRecipe)
-
+router.put('/favorite/:id', ensureAuth, recipeController.favoriteRecipe)
 
 module.exports = router 
