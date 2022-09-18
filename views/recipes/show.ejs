@@ -57,11 +57,14 @@
         </div>
     </div>
 </div>
-<div class="fixed-action-btn">
-    <a href="/stories/add" class="btn-floating btn-large waves-effect waves-light red">
-        <i class="material-icons">shopping_cart</i>
-    </a>
-</div>
+<form action="/cart/add/<%= recipe._id %>?_method=PUT" method="POST">
+    <div class="fixed-action-btn">
+        <button class="btn-floating btn-large waves-effect waves-light red" type="submit">
+            <i class="material-icons">shopping_cart</i>
+        </button>
+    </div>
+</form>
+
 </div>
 <%- include('../partials/_footer') %>
 
