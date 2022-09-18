@@ -91,5 +91,22 @@ module.exports = {
         catch (err) {
             console.error(err)
         }
+    },
+    removeFavorite: async (req, res) => {
+        try {
+            await User.findByIdAndUpdate(
+                {_id: req.user.id},
+                {
+                    $pullAll: {
+                        favorites: [req.params.id]
+                    }
+                }
+            )
+            res.redirect('/dashboard')
+        }
+        catch (err) {
+            console.error(err)
+        }
+
     }
 }
