@@ -1,33 +1,43 @@
+<%- include('partials/_head') %>
 <%- include('partials/_header') %>
-<h3>Your Shopping List</h3>
-<table class="striped">
-    <thead>
-        <tr>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>For</th>
-        </tr>
-    </thead>
+<div class="container">
+    <h3>Your Shopping List</h3>
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>For</th>
+            </tr>
+        </thead>
 
-    <tbody>
-        <tr>
-        <td>Cheese</td>
-        <td>2</td>
-        <td>Tacos</td>
-        </tr>
-        <tr>
-        <td>Tomato</td>
-        <td>1</td>
-        <td>Salad</td>
-        </tr>
-        <tr>
-        <td>Chicken</td>
-        <td>3</td>
-        <td>Soup, Tacos</td>
-        </tr>
-    </tbody>
-</table>
-
-<button class="btn waves-effect waves-light" type="submit" name="action">Text Me My Shopping List
-    <i class="material-icons right">send</i>
-</button>
+        <tbody>
+            <tr>
+            <td>Cheese</td>
+            <td>2</td>
+            <td>Tacos</td>
+            </tr>
+            <tr>
+            <td>Tomato</td>
+            <td>1</td>
+            <td>Salad</td>
+            </tr>
+            <tr>
+            <td>Chicken</td>
+            <td>3</td>
+            <td>Soup, Tacos</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="section">
+        <div class="section">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Email Me My Shopping List
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <div class="section">
+            <a href="/dashboard" class="btn">Back to Recipes</a>
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %>

@@ -60,6 +60,9 @@ body {
 .recipe-image img {
     max-width: 75%;
 }
+.card .card-title {
+    color: var(--red);
+}
 
 .card .chip {
     margin-top: 1rem;
@@ -68,7 +71,6 @@ body {
 
 .card .card-action a {
     color: var(--red) !important;
-    font-weight: bold;
 }
 
 .card .card-line {
@@ -87,4 +89,8 @@ body {
 
 .card .btn-floating.outline {
     background-color: var(--grey);
+    transition: background-color 0.2s ease;
+}
+.card .btn-floating.outline:hover {
+    background-color: var(--red);
 }
