@@ -49,13 +49,14 @@ body {
     margin-top: 2rem;
 }
 
-
-.card .btn-floating {
+.error {
     background-color: var(--red);
+    color: #fff;
 }
 
 
 /* Recipe Page */
+
 .recipe-image img {
     max-width: 75%;
 }
@@ -78,4 +79,12 @@ body {
 
 .card .card-line i {
     margin-right: 0.25rem;
+}
+
+.card .btn-floating {
+    background-color: var(--red);
+}
+
+.card .btn-floating.outline {
+    background-color: var(--grey);
 }

@@ -9,7 +9,11 @@ module.exports = {
             .sort({ createdAt: 'desc' })
             .lean()
             
-            res.render('recipes/index', {title: 'All Recipes', recipes})
+            const favoriteIDs = await User.find({
+                _id: req.user.id
+            }).select("favorites")
+
+            res.render('recipes/index', {title: 'All Recipes', recipes, favorites: favoriteIDs[0].favorites})
         }
         catch(err) {
             console.error(err)
@@ -23,7 +27,7 @@ module.exports = {
             const favoriteIDs = await User.find({
                 _id: req.user.id
             }).select("favorites")
-            //console.log(favoriteIDs)
+            
             const favorites = await Recipe.find({_id: {$in: favoriteIDs[0].favorites }})
             res.render('recipes/dashboard', {title: 'Dashboard', recipes, favorites})
         }
@@ -62,12 +66,26 @@ module.exports = {
     },
     favoriteRecipe: async (req, res) => {
         try {
-            await User.findOneAndUpdate(
-                { _id: req.user.id },
-                {
-                    $push: { favorites: req.params.id }
-                }
-            )
+            const user = await User.findById(req.user.id)
+
+            if(user.favorites.includes(req.params.id)) {
+                await User.findByIdAndUpdate(
+                    {_id: user._id},
+                    {
+                        $pullAll: {
+                            favorites: [req.params.id]
+                        }
+                    }
+                )
+            }    
+            else {
+                await User.findOneAndUpdate(
+                    { _id: req.user.id },
+                    {
+                        $push: { favorites: req.params.id }
+                    }
+                )
+            }
             res.redirect('/recipes')
         }
         catch (err) {

@@ -5,7 +5,18 @@
             <p class="lead">Create & share recipes, generate shopping lists</p>
     </div>
     <div class="section row valign-wrapper">
+        
         <form class="col m6 center" action="/auth/login" method="POST">
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div class="error"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <% if (locals.messages.info) { %>
+                <% messages.info.forEach( el => { %>
+                    <div class="error"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
             <div class="input-field col s12">
                 <input type="email" name="email" placeholder="Email">
             </div>
