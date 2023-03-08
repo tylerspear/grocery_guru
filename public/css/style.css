@@ -12,10 +12,6 @@ body {
 
 /* LOGO */
 
-.logo {
-    color: var(--red) !important;
-    font-family: 'Bangers', cursive;
-}
 
 /* BTN */
 .btn {
@@ -23,10 +19,6 @@ body {
 }
 .logo--nav {
     font-size: 2.5rem !important;
-}
-
-.logo--login {
-    font-size: 4rem;
 }
 
 /* NAV */
@@ -54,6 +46,46 @@ body {
     color: #fff;
 }
 
+.login__window {
+    display: flex;
+    min-height: 65vh;
+    margin-top: 10%;
+}
+
+.login__left {
+    background-color: var(--red);
+    color: #fff;
+    height: 100%;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.login__right {
+    height: 100%;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.login__mobile {
+    border: 2px solid var(--red);
+    border-radius: 7px;
+    padding: 2rem 1rem;
+}
+
+.login__form {
+    margin-top: 50%;
+}
+
+.login__signup {
+    display: block;
+    margin-top: 1rem;
+}
 
 /* Recipe Page */
 

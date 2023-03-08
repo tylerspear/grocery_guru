@@ -1,12 +1,12 @@
-<%- include('partials/_head') %>
+<!-- <%- include('partials/_head') %>
 <div class="container">
     <div class="section center">
             <h3 class="logo logo--login center">Grocery Guru</h3>
             <p class="lead">Create & share recipes, generate shopping lists</p>
     </div>
-    <div class="section row valign-wrapper">
+    <div class="row">
         
-        <form class="col m6 center" action="/auth/login" method="POST">
+        <form class="col s12 center" action="/auth/login" method="POST">
             <% if (locals.messages.errors) { %>
                 <% messages.errors.forEach( el => { %>
                     <div class="error"><%= el.msg %></div>
@@ -25,7 +25,7 @@
             </div>
             <input class="btn" type="submit" value="Log In">
         </form>
-        <div class="col m6 center-align">
+        <div class="col s12 center-align">
             <span>No Account? </span><a class="btn" href="/auth/signup">Sign Up</a>
         </div>
     </div>
@@ -53,4 +53,69 @@
         </div>
     </div>
 </div>
-<%- include('partials/_footer') %>
+<%- include('partials/_footer') %> -->
+
+<%- include('partials/_head') %>
+<div class="container">
+    <div class="login__window">
+        <div class="row">
+            <div class="col s12 m6 login__left hide-on-small-only">
+
+                    <img src="./img/logo-white.png" alt="logo" class="responsive-img">
+                    <p class="lead center">Make grocery shopping a breeze</p>
+            </div>
+
+            <div class="col s12 m6 login__right hide-on-small-only">
+                <form action="/auth/login" method="POST" class="login__form">
+                    <% if (locals.messages.errors) { %>
+                        <% messages.errors.forEach( el => { %>
+                            <div class="error"><%= el.msg %></div>
+                        <% }) %>    
+                    <% } %>
+                    <% if (locals.messages.info) { %>
+                        <% messages.info.forEach( el => { %>
+                            <div class="error"><%= el.msg %></div>
+                        <% }) %>    
+                    <% } %>
+                    <div class="input-field col s12">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <input class="btn" type="submit" value="Log In">
+                </form>
+                <a class="login__signup">Sign Up</a>
+            </div>
+            <div class="col s12 hide-on-med-and-up">
+                <div class="login__mobile">
+
+                    <img src="./img/logo-white.png" alt="logo" class="responsive-img">
+
+                    <form action="/auth/login" method="POST">
+                        <% if (locals.messages.errors) { %>
+                            <% messages.errors.forEach( el => { %>
+                                <div class="error"><%= el.msg %></div>
+                            <% }) %>    
+                        <% } %>
+                        <% if (locals.messages.info) { %>
+                            <% messages.info.forEach( el => { %>
+                                <div class="error"><%= el.msg %></div>
+                            <% }) %>    
+                        <% } %>
+                        <div class="input-field col s12">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <input class="btn" type="submit" value="Log In">
+                    </form>
+                    <a class="login__signup">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %> 
