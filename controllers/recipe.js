@@ -40,6 +40,7 @@ module.exports = {
             const recipe = await Recipe.findById(req.params.id)
                 .populate('user')
                 .lean()
+
             res.render('recipes/show', {title: 'Recipe', recipe})
         }
         catch(err) {

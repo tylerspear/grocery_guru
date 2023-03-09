@@ -86,6 +86,9 @@ body {
     display: block;
     margin-top: 1rem;
 }
+.lead--login {
+    font-size: 2rem;
+}
 
 /* Recipe Page */
 
